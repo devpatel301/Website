@@ -1,6 +1,76 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Log page view
-    console.log(`${new Date().toISOString()}, view, page_loaded`);
+    // Event tracking function to capture all clicks and views
+    function trackUserInteractions() {
+        // Track page view on load
+        console.log(`${new Date().toISOString()}, view, page_loaded`);
+        
+        // Track all click events using event delegation
+        document.addEventListener('click', function(event) {
+            const target = event.target;
+            let elementType = target.tagName.toLowerCase();
+            let elementDescription = '';
+            
+            // Determine more specific element type and description
+            if (target.tagName === 'IMG') {
+                elementDescription = `image:${target.alt || 'unnamed-image'}`;
+            } else if (target.tagName === 'A') {
+                elementDescription = `link:${target.textContent.trim() || target.href}`;
+            } else if (target.tagName === 'BUTTON') {
+                elementDescription = `button:${target.textContent.trim() || 'unnamed-button'}`;
+            } else if (target.classList.contains('nav-link')) {
+                elementDescription = `nav-item:${target.textContent.trim()}`;
+            } else if (target.classList.contains('project-card')) {
+                elementDescription = `project-card:${target.querySelector('h3')?.textContent || 'unnamed-project'}`;
+            } else if (target.classList.contains('skill-card')) {
+                elementDescription = `skill-card:${target.querySelector('p')?.textContent || 'unnamed-skill'}`;
+            } else if (target.closest('.social-link')) {
+                const socialLink = target.closest('.social-link');
+                elementDescription = `social-link:${socialLink.textContent.trim() || 'unnamed-social-link'}`;
+            } else {
+                // For any other element, try to get some identifying information
+                elementDescription = target.id ? `${elementType}:${target.id}` : 
+                                     target.className ? `${elementType}:${target.className}` : 
+                                     target.textContent ? `${elementType}:${target.textContent.trim().substring(0, 20)}` : 
+                                     `${elementType}`;
+            }
+            
+            console.log(`${new Date().toISOString()}, click, ${elementDescription}`);
+        });
+        
+        // Track all view events when elements enter viewport
+        const observableElements = document.querySelectorAll('section, .project-card, .skill-card, .education-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    let elementType = target.tagName.toLowerCase();
+                    let elementDescription = '';
+                    
+                    if (target.id) {
+                        elementDescription = `section:${target.id}`;
+                    } else if (target.classList.contains('project-card')) {
+                        elementDescription = `project-card:${target.querySelector('h3')?.textContent || 'unnamed-project'}`;
+                    } else if (target.classList.contains('skill-card')) {
+                        elementDescription = `skill-card:${target.querySelector('p')?.textContent || 'unnamed-skill'}`;
+                    } else if (target.classList.contains('education-card')) {
+                        elementDescription = `education-card`;
+                    } else {
+                        elementDescription = target.className ? `${elementType}:${target.className}` : elementType;
+                    }
+                    
+                    console.log(`${new Date().toISOString()}, view, ${elementDescription}`);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observableElements.forEach(element => {
+            observer.observe(element);
+        });
+    }
+    
+    // Initialize tracking
+    trackUserInteractions();
     
     // Navigation active state
     const sections = document.querySelectorAll('section');
@@ -31,30 +101,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
-    // Smooth scrolling
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                window.scrollTo({
-                    top: targetSection.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                
-                // Update active nav link
-                navLinks.forEach(link => link.classList.remove('active'));
-                this.classList.add('active');
-            }
-            
-            // Log click event
-            console.log(`${new Date().toISOString()}, click, nav-link:${this.textContent}`);
-        });
-    });
     
     // Project card tilt effect
     const projectCards = document.querySelectorAll('.project-card');
