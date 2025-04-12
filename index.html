@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev's Portfolio</title>
+    <meta name="description" content="Portfolio of a Computer Science student showcasing skills, projects and educational background">
+    <meta name="author" content="Dev">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Roboto:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#birthplace" class="nav-link">Birthplace</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#text-analyzer" class="nav-link">Text Analyzer</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <div class="content-container">
+            <div class="home-greeting">
+                <h2>Hello!</h2>
+                <p>I'm</p>
+            </div>
+            <div class="home-box">
+                <h1>DEV PATEL</h1>
+            </div>
+            <p class="home-description">Currently pursuing B.Tech. in Computer Science at IIIT-H. Aspiring to become a Full-stack developer.</p>
+            <div class="social-links">
+                <a href="https://github.com/devpatel301" target="_blank" class="social-link">
+                    GitHub
+                </a>
+                <a href="www.linkedin.com/in/devpatel301" target="_blank" class="social-link">
+                    LinkedIn
+                </a>
+                <a href="assets/cv.pdf" download class="social-link">
+                <img src="assets/download_button.svg" alt="Download" width="24" height="24">
+                    Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="section-tab about-tab">
+            <img src="assets/person.svg" alt="Person" widht="24" height="24">
+            <h2>ABOUT</h2>
+        </div>
+        <div class="section-content about-bg">
+            <div class="content-container">
+                <div class="about-layout">
+                    <div class="about-text">
+                        <p>I'm a creative and enthusiastic first-year Computer Science student with a growing passion for technology and software development. Though early in my journey, I approach problems with fresh perspectives, combining analytical thinking with creative solutions.</p>
+                        <p>My interests span across web development, app creation, and game design – fields where I can blend technical learning with my natural inclination toward user-friendly design. I'm fascinated by how thoughtfully designed interfaces can transform user experiences, making technology more accessible and enjoyable.</p>
+                        <p>Currently pursuing B.Tech in Computer Science Engineering at International Institute of Information Technology, Hyderabad, I balance academic learning with practical application through personal and collaborative projects.</p>
+                    </div>
+                    <div class="traits-container">
+                        <div class="trait">Problem Solver</div>
+                        <div class="trait">Detail-Oriented</div>
+                        <div class="trait">Continuous Learner</div>
+                        <div class="trait">Team Collaborator</div>
+                        <div class="trait">Creative Thinker</div>
+                    </div>
+                    <div class="profile-container">
+                        <img src="assets/profile.png" alt="My Profile" class="profile-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Birthplace Section -->
+    <section id="birthplace" class="section">
+        <div class="section-tab birthplace-tab">
+            <img src="assets/home.svg" alt="Home" widht="24" height="24">
+            <h2>BIRTHPLACE</h2>
+        </div>
+        <div class="section-content birthplace-bg">
+            <div class="content-container">
+                <div class="birthplace-content">
+                    <div class="birthplace-description">
+                        <h3>My Hometown</h3>
+                        <p>I was born and raised in Surat, also known as The city of Sun. It is a beautiful place known for its delightful varieties of food. The local culture has influenced my perspective and approach to problem-solving, while the community values of business minded people have shaped my work ethic and collaboration style.</p>
+                        <p>Growing up in this environment, I developed a strong appreciation for simplicity and minimalization, which continues to inspire my creative process today.</p>
+                    </div>
+                    <div class="birthplace-gallery">
+                        <div class="gallery-item">
+                            <img src="assets/Diamond_Bourse.jpg" alt="Diamond Bourse">
+                            <p class="gallery-caption">The Surat Diamond Bourse - World's largest office building</p>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="assets/Old_Fort1.jpg" alt="Old Fort">
+                            <p class="gallery-caption">Old Fort of Surat built in 16th century</p>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="assets/Botanical_Garden.jpg" alt="Botanical Garden">
+                            <p class="gallery-caption">Sneh Rashmi  Botanical Garden</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="section-tab education-tab">
+            <img src="assets/education.svg" alt="Education" widht="28" height="28">
+            <h2>EDUCATION</h2>
+        </div>
+        <div class="section-content education-bg">
+            <div class="content-container">
+                <div class="education-grid">
+                    <div class="education-card">
+                        <h3>College</h3>
+                        <p class="education-content">International Institue of Information Technology, Hyderabad</p>
+                        <p class="education-content"> <b>Degree:</b> Bachelor of Technology</p>
+                        <p class="education-content"><b>Expected Graduation:</b> 2028</p>
+                        <p><b>Relevant Coursework:</b> Data Structures & Algorithms, Linear Algebra, Discrete Mathematics, Web Development</p>
+                    </div>
+                    <div class="education-card">
+                        <h3>School</h3>
+                        <p class="education-content"><b>Pre-school to Class 10:</b> Bhulka Bhavan</p>
+                        <p class="education-content"><b>Class 11 & 12:</b> Riverdale Academy</p>
+                        <p class="education-content"><b>Graduated:</b> 2022</p>
+                    </div>
+                </div>
+                <div class="achievements-card">
+                    <h3>Achievements</h3>
+                    <ul class="achievements-list">
+                        <li>Anchoring, for school events</li>
+                        <li>Qualified for District Level Chess Compitition</li>
+                        <li>Team Lead, Debates and Plays</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="section-tab skills-tab">
+            <img src="assets/skills.svg" alt="Skills" width="24" height="24">
+            <h2>SKILLS</h2>
+        </div>
+        <div class="section-content skills-bg">
+            <div class="content-container">
+                <div class="skills-scroll-container">
+                    <div class="skills-row">
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <img src="assets/c_logo.png" alt="C Logo" width="100" height="100">
+                            </div>
+                            <p>C</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <img src="assets/cpp.svg" alt="CPP Logo" width="100" height="100">
+                            </div>
+                            <p>C++</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <img src="assets/html.svg" alt="HTML Logo" width="100" height="100">
+                            </div>
+                            <p>HTML</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <img src="assets/css.svg" alt="CSS Logo" width="100" height="100">
+                            </div>
+                            <p>CSS</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <img src="assets/javascript.svg" alt="JS Logo" width="80" height="80">
+                            </div>
+                            <p>JavaScript</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <img src="assets/fastapi-original-logo.svg" alt="FastAPI Logo" width="100" height="100" align="center">
+                            </div>
+                            <p>FastAPI</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <img src="assets/Jinja_software_logo.svg" alt="Jinja Logo" width="130" height="70">
+                            </div>
+                            <p>Jinja</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <img src="assets/python.svg" alt="Python Logo" width="100" height="100">
+                            </div>
+                            <p>Python</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <img src="assets/git-svgrepo-com.svg" alt="Git Logo" width="100" height="100">
+                            </div>
+                            <p>Git</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <img src="assets/mysql-logo-svgrepo-com.svg" alt="MySQL Logo" width="100" height="100">
+                            </div>
+                            <p>MySQL</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <img src="assets/mongodb-svgrepo-com.svg" alt="NoSQL Logo" width="100" height="100">
+                            </div>
+                            <p>NoSQL</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="section-tab projects-tab">
+            <img src="assets/projects1.svg" alt="Projects" widht="24" height="24">
+            <h2>PROJECTS</h2>
+        </div>
+        <div class="section-content projects-bg">
+            <div class="content-container">
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Smart Glove Project Simulation</h3>
+                        <p>A website that demonstrates the features of my IoT project - Smart Glove for Amputees. This website has a simulation of a smart home that can be controlled by Hand Gestures. Essentially to be used by doctors and physiotherapists to monitor the moveent of the patient. It is deployed on FireBase.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                        </div>
+                        <a href="https://smart-glove.web.app/" class="project-link">
+                            <span>View the site</span>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <h3 align="center">More Projects coming soon...</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Text Analyzer Section -->
+    <section id="text-analyzer" class="section">
+        <div class="section-tab analyzer-tab">
+            <img src="assets/text.svg" alt="Text" widht="24" height="24">
+            <h2>TEXT ANALYZER</h2>
+        </div>
+        <div class="section-content analyzer-bg">
+            <div class="content-container">
+                <div class="analyzer-container">
+                    <p class="analyzer-description">This tool analyzes text structure, including word count, character types, and parts of speech. Enter any text below to see it in action.</p>
+                    <textarea id="text-input" placeholder="Enter text here to analyze... (Handles 10,000+ words)" class="analyzer-textarea"></textarea>
+                    <button id="analyze-button" class="button">Analyze Text</button>
+                    <div id="analysis-results" class="results-grid">
+                        <div id="letters-count" class="result-card">Letters: 0</div>
+                        <div id="words-count" class="result-card">Words: 0</div>
+                        <div id="spaces-count" class="result-card">Spaces: 0</div>
+                        <div id="newlines-count" class="result-card">Newlines: 0</div>
+                        <div id="special-symbols-count" class="result-card">Special Symbols: 0</div>
+                        <div id="pronouns-count" class="result-card">Pronouns: 0</div>
+                        <div id="prepositions-count" class="result-card">Prepositions: 0</div>
+                        <div id="articles-count" class="result-card">Articles: 0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="content-container">
+            <div class="footer-content">
+                <p>© 2025 Dev Patel. All Rights Reserved.</p>
+                <div class="social-links footer-social">
+                    <a href="mailto:devpatel0262@gmail.com" target="_blank" class="footer-link"><img src="assets/mail1.svg" alt="Mail" width="24" height="24"></a>
+                    <a href="https://github.com/devpatel301" target="_blank" class="footer-link"><img src="assets/github_logo.svg" alt="GitHub" width="24" height="24"></a>
+                    <a href="www.linkedin.com/in/devpatel301" target="_blank" class="footer-link"><img src="assets/linkedin_logo.svg" alt="LinkedIn" width="24" height="24"></a>
+                    <a href="assets/cv.pdf" download class="footer-link"><img src="assets/download_button.svg" alt="Download" width="24" height="24">Resume</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
