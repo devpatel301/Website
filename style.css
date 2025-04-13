@@ -639,6 +639,12 @@ footer {
   gap: 0.5rem;
 }
 
+.footer-social-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
 .footer-link {
   background-color: transparent;
   color: var(--black);
