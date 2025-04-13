@@ -1,29 +1,26 @@
-/* Base Styles */
+/* Defining common colors for my use */
 :root {
-  /* Color Palette */
   --primary-yellow: #fdef26;
-  --primary-purple: #D0B4F4;
+  --primary-purple: #d0b4f4;
   --accent-orange: #ff6a3d;
   --black: #000000;
-  --white: #EFEFE2;
-  
-  /* Section Colors */
-  --home-bg: #FFF9E0;
+  --white: #efefe2;
+
+  --home-bg: #fff9e0;
   --about-bg: #ffdf50;
   --birthplace-bg: #b3f6ff;
-  --education-bg: #F3E8FF;
+  --education-bg: #f3e8ff;
   --skills-bg: #c1ffca;
   --projects-bg: #e8ccff;
   --analyzer-bg: #ff7676;
-  
-  /* Typography & Structure */
-  --font-mono: 'Space Mono', monospace;
+
+  --font-mono: "Space Mono", monospace;
   --border-width: 3px;
   --shadow-offset: 4px;
   --border-radius: 8px;
 }
 
-/* Reset & Global Styles */
+/* Common styling */
 * {
   margin: 0;
   padding: 0;
@@ -43,14 +40,13 @@ body {
   overflow-x: hidden;
 }
 
-/* Layout Classes */
 .content-container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Navigation */
+/* Navigation Bar */
 .navbar {
   position: fixed;
   top: 0;
@@ -79,7 +75,7 @@ body {
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -5px;
   left: 50%;
@@ -90,15 +86,17 @@ body {
   transition: width 0.2s ease;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
   color: var(--black);
 }
 
-.nav-link:hover::after, .nav-link.active::after {
+.nav-link:hover::after,
+.nav-link.active::after {
   width: 80%;
 }
 
-/* Sections & Tabs */
+/* Commo styling for all the sections */
 .section {
   position: relative;
   padding-top: 3rem;
@@ -116,16 +114,9 @@ body {
   border-radius: 8px 8px 0 0;
   z-index: 2;
   margin-left: 2rem;
-  box-shadow: 2px -2px 0 rgba(0,0,0,0.1);
+  box-shadow: 2px -2px 0 rgba(0, 0, 0, 0.1);
   transform: translateY(3px);
 }
-
-/* Section tab background colors */
-.about-tab { background-color: var(--about-bg); }
-.education-tab { background-color: var(--education-bg); }
-.skills-tab { background-color: var(--skills-bg); }
-.projects-tab { background-color: var(--projects-bg); }
-.analyzer-tab { background-color: var(--analyzer-bg); }
 
 .section-tab h2 {
   font-size: 1rem;
@@ -140,17 +131,43 @@ body {
   padding: 2rem 0;
   position: relative;
   z-index: 1;
-  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 rgba(0,0,0,0.2);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 rgba(0, 0, 0, 0.2);
 }
 
-/* Section background colors */
-.about-bg { background-color: var(--about-bg); }
-.education-bg { background-color: var(--education-bg); }
-.skills-bg { background-color: var(--skills-bg); }
-.projects-bg { background-color: var(--projects-bg); }
-.analyzer-bg { background-color: var(--analyzer-bg); }
+/* Individual sections styling */
+.about-tab {
+  background-color: var(--about-bg);
+}
+.education-tab {
+  background-color: var(--education-bg);
+}
+.skills-tab {
+  background-color: var(--skills-bg);
+}
+.projects-tab {
+  background-color: var(--projects-bg);
+}
+.analyzer-tab {
+  background-color: var(--analyzer-bg);
+}
 
-/* Home Section */
+.about-bg {
+  background-color: var(--about-bg);
+}
+.education-bg {
+  background-color: var(--education-bg);
+}
+.skills-bg {
+  background-color: var(--skills-bg);
+}
+.projects-bg {
+  background-color: var(--projects-bg);
+}
+.analyzer-bg {
+  background-color: var(--analyzer-bg);
+}
+
+/* Home section */
 #home {
   background-color: var(--home-bg);
   padding: 6rem 0 3rem;
@@ -173,9 +190,14 @@ body {
   animation: typing 2s steps(6, end);
 }
 
+/* Typing effect for Hello! */
 @keyframes typing {
-  from { width: 0 }
-  to { width: 15% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 15%;
+  }
 }
 
 .home-greeting p {
@@ -204,21 +226,26 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Common Card Styles */
-.card, .education-card, .achievements-card, .skill-card, .project-card, .analyzer-container, .result-card {
+.card,
+.education-card,
+.achievements-card,
+.skill-card,
+.project-card,
+.analyzer-container,
+.result-card {
   border: var(--border-width) solid var(--black);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--black);
 }
 
-/* Social Links */
 .social-links {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
-.social-link, .footer-link {
+.social-link,
+.footer-link {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -241,7 +268,7 @@ body {
   box-shadow: 2px 2px 0 var(--black);
 }
 
-/* About Section */
+/* About section */
 .about-layout {
   display: grid;
   grid-template-columns: 1fr auto auto;
@@ -266,24 +293,7 @@ body {
   margin-bottom: 0;
 }
 
-.traits-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.trait {
-  background-color: var(--accent-orange);
-  color: var(--black);
-  padding: 0.7rem 1rem;
-  border: var(--border-width) solid var(--black);
-  border-radius: 4px;
-  font-weight: bold;
-  box-shadow: 3px 3px 0 var(--black);
-  text-align: center;
-  white-space: nowrap;
-}
-
+/* Profile pic */
 .profile-container {
   display: flex;
   justify-content: center;
@@ -300,7 +310,8 @@ body {
   background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #ffe66d);
   padding: 5px;
 }
-/* Birthplace Section */
+
+/* Birthplace section */
 .birthplace-tab {
   background-color: var(--birthplace-bg);
 }
@@ -355,20 +366,19 @@ body {
 }
 
 .gallery-caption {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   padding: 1rem;
   text-align: center;
   font-size: 1.2rem;
 }
 
-/* Add responsive styling */
 @media (max-width: 768px) {
   .birthplace-gallery {
     grid-template-columns: 1fr;
   }
 }
 
-/* Education Section */
+/* Education section */
 .education-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -381,7 +391,8 @@ body {
   padding: 1.5rem;
 }
 
-.education-card h3, .achievements-card h3 {
+.education-card h3,
+.achievements-card h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
@@ -403,7 +414,7 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* Skills Section - Horizontal Scrolling */
+/* Skills section */
 .skills-scroll-container {
   width: 100%;
   overflow-x: auto;
@@ -449,7 +460,8 @@ body {
 
 .skill-card:hover {
   transform: translateY(-5px);
-  box-shadow: calc(var(--shadow-offset) + 2px) calc(var(--shadow-offset) + 2px) 0 var(--black);
+  box-shadow: calc(var(--shadow-offset) + 2px) calc(var(--shadow-offset) + 2px)
+    0 var(--black);
 }
 
 .skill-icon {
@@ -468,7 +480,7 @@ body {
   font-size: 1.2rem;
 }
 
-/* Projects Section */
+/* Projects section */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -533,7 +545,7 @@ body {
   box-shadow: 1px 1px 0 var(--primary-purple);
 }
 
-/* Text Analyzer */
+/* Tokenization or Text Analyzer section */
 .analyzer-container {
   background-color: #c5d7ff;
   padding: 2rem;
@@ -553,7 +565,7 @@ body {
   border-radius: 8px;
   font-family: var(--font-mono);
   resize: vertical;
-  box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
 }
 
 .button {
@@ -567,7 +579,7 @@ body {
   cursor: pointer;
   box-shadow: 4px 4px 0 var(--black);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
 }
 
 .button:hover {
@@ -582,11 +594,16 @@ body {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.3s ease, transform 0.3s ease;
+  margin-top: 2rem;
+  height: 0;
+  overflow: hidden;
 }
 
 .results-grid.active {
   opacity: 1;
   transform: translateY(0);
+  height: auto;
+  overflow: visible;
 }
 
 .result-card {
@@ -602,50 +619,54 @@ body {
 footer {
   background-color: var(--about-bg);
   color: var(--black);
-  padding: 1.5rem 0; /* Reduced padding from 3rem to 1.5rem */
+  padding: 1.5rem 0;
   margin-top: 3rem;
 }
 
 .footer-content {
   display: flex;
-  flex-direction: row; /* Changed from column to row */
-  justify-content: space-between; /* Added to push items to opposite sides */
-  align-items: center; /* Center items vertically */
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   gap: 1rem;
 }
 
 .footer-social {
-  display: flex; /* Ensure links are in a row */
-  gap: 1rem; /* Space between social links */
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
 }
 
 .footer-link {
   background-color: transparent;
   color: var(--black);
   border: 2px solid var(--black);
-  padding: 0.5rem 1rem; /* Smaller padding for links */
-  font-size: 0.9rem; /* Slightly smaller font size */
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
 }
 
-
-/* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Responsive Styling */
 @media (max-width: 1200px) {
   .about-layout {
     grid-template-columns: 1fr 1fr;
   }
-  
+
   .profile-container {
     grid-column: 2;
     grid-row: 1;
     justify-self: end;
   }
-  
+
   .traits-container {
     grid-column: 1 / -1;
     grid-row: 2;
@@ -658,28 +679,41 @@ footer {
   .about-layout {
     grid-template-columns: 1fr;
   }
-  
+
   .profile-container {
     grid-column: 1;
     grid-row: 1;
     justify-self: center;
     margin-bottom: 1.5rem;
   }
-  
+
   .about-text {
     grid-row: 2;
   }
-  
+
   .traits-container {
     grid-row: 3;
   }
-  
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .section-tab {
     margin-left: 1rem;
+  }
+
+  .navbar {
+    padding: 1.2rem 0;
+  }
+
+  .nav-links {
+    gap: 0.5rem;
+  }
+
+  .nav-link {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -687,15 +721,19 @@ footer {
   .home-box h1 {
     font-size: 3.5rem;
   }
-  
+
   .skill-card {
     flex: 0 0 150px;
     height: 150px;
   }
-  
+
   .skill-icon {
     width: 60px;
     height: 60px;
     margin-bottom: 1rem;
+  }
+
+  .footer-link {
+    padding: 0.4rem 0.8rem;
   }
 }
