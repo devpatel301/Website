@@ -78,18 +78,30 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function getCurrentSection() {
         let current = '';
+        let scrollPosition = window.scrollY + window.innerHeight/2;
         
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - 150;
+            const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
             
-            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                 current = section.getAttribute('id');
             }
         });
         
+        // Special case for the last section (Text Analyzer)
+        const lastSection = sections[sections.length - 1];
+        const documentHeight = document.documentElement.scrollHeight;
+        const windowHeight = window.innerHeight;
+        
+        // If we're near the bottom of the page, highlight the last section
+        if (window.scrollY + windowHeight > documentHeight - 50) {
+            current = lastSection.getAttribute('id');
+        }
+        
         return current;
     }
+    
     
     function updateNavigation() {
         const currentSection = getCurrentSection();
